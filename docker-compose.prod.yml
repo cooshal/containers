@@ -22,13 +22,14 @@ services:
     hostname: '${COMPOSE_PROJECT_NAME:-demo}'
     environment:
       SERVERNAME: '${SERVERNAME:-journal.ghyampe.com}'
-      TRUSTED_PROXY_IPS: '${TRUSTED_PROXY_IPS:-*}'
       DB_HOST: db
       DB_USER: '${MYSQL_USER:-pkp}'
       DB_PASSWORD: '${MYSQL_PASSWORD:-changeMePlease}'
       DB_NAME: '${MYSQL_DATABASE:-pkp}'
+      FORCE_HTTPS: '0'
+      HTTPS_HEADER: '0'
+      OJS_CLI_INSTALL: 0
     volumes:
-      - ./volumes/config/pkp.config.inc.php:/var/www/html/config.inc.php
       - 'ojs-files:/var/www/html/files'
       - 'ojs-public:/var/www/html/public'
     networks:
