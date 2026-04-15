@@ -22,8 +22,6 @@ services:
     hostname: '${COMPOSE_PROJECT_NAME:-demo}'
     environment:
       SERVERNAME: '${SERVERNAME:-journal.ghyampe.com}'
-      FORCE_HTTPS: '${FORCE_HTTPS:-1}'
-      HTTPS_HEADER: '${HTTPS_HEADER:-1}'
       TRUSTED_PROXY_IPS: '${TRUSTED_PROXY_IPS:-*}'
       DB_HOST: db
       DB_USER: '${MYSQL_USER:-pkp}'
