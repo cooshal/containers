@@ -12,8 +12,6 @@ services:
       MYSQL_PASSWORD: "${MYSQL_PASSWORD:-changeMePlease}"
     volumes:
       - db-data:/var/lib/mysql
-    networks:
-      - inside
     restart: unless-stopped
 
   app:
@@ -25,8 +23,6 @@ services:
       - ojs-public:/var/www/html/public
       # Keep host and container sync:
       - /etc/localtime:/etc/localtime
-    networks:
-      - inside
     depends_on:
       - db
     restart: unless-stopped
