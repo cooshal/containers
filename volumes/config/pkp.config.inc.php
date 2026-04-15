@@ -33,7 +33,7 @@ app_key =
 installed = Off
 
 ; The canonical URL to the OJS installation (excluding the trailing slash)
-base_url = "https://pkp.sfu.ca/ojs"
+base_url = "https://journal.ghyampe.com"
 
 ; Enable strict mode. This will more aggressively cause errors/warnings when
 ; deprecated behaviour exists in the codebase.
