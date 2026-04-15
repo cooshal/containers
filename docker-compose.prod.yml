@@ -10,6 +10,8 @@ services:
       MYSQL_DATABASE: "${MYSQL_DATABASE:-pkp}"
       MYSQL_USER: "${MYSQL_USER:-pkp}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD:-changeMePlease}"
+    networks:
+      - ojs
     volumes:
       - db-data:/var/lib/mysql
     restart: unless-stopped
@@ -23,9 +25,14 @@ services:
       - ojs-public:/var/www/html/public
       # Keep host and container sync:
       - /etc/localtime:/etc/localtime
+    networks:
+      - ojs
     depends_on:
       - db
     restart: unless-stopped
+
+networks:
+  ojs: null
 
 volumes:                                                                                                                                                                             
   db-data:      
