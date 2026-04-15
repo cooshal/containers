@@ -31,10 +31,6 @@ services:
       - db
     restart: unless-stopped
 
-networks:
-  inside:
-    external: false
-
 volumes:                                                                                                                                                                             
   db-data:      
   ojs-files:                                                                                                                                                                         
