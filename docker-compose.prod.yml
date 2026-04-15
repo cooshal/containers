@@ -28,9 +28,9 @@ services:
       DB_PASSWORD: '${MYSQL_PASSWORD:-changeMePlease}'
       DB_NAME: '${MYSQL_DATABASE:-pkp}'
     volumes:
+      - ./volumes/config/pkp.config.inc.php:/var/www/html/config.inc.php
       - 'ojs-files:/var/www/html/files'
       - 'ojs-public:/var/www/html/public'
-      - '/etc/localtime:/etc/localtime'
     networks:
       - ojs
     depends_on:
